@@ -58,3 +58,42 @@ cd C:/xampp/htdocs/
 git clone https://github.com/yourusername/student_management.git
 
 # Start Apache and MySQL from XAMPP Control Panel
+
+
+## Database Configuration
+
+1. Navigate to `http://localhost/phpmyadmin/`
+2. Create database: `student_management`
+3. Import the provided SQL file to create tables
+
+### Connection Settings
+
+Open `database.php` and verify your MySQL port:
+
+```php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "student_management";
+$port = 3306; // Update to 3307 if using alternate port
+
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+
+---
+
+## Database Schema
+
+| Table | Description |
+|-------|-------------|
+| `students` | Student personal identifiers and enrollment data |
+| `courses` | University course codes and titles |
+| `student_records` | Junction table linking students to courses with exam scores |
+
+**Relationships:** Student Records table uses foreign keys to map students and courses with attendance tracking and grade management.
+
+---
+
+## Author
+
+**Feiswal Dindi Onyango**
