@@ -58,39 +58,3 @@ cd C:/xampp/htdocs/
 git clone https://github.com/yourusername/student_management.git
 
 # Start Apache and MySQL from XAMPP Control Panel
-Database Configuration
-Navigate to http://localhost/phpmyadmin/
-
-Create database: student_management
-
-Import the provided SQL file to create tables
-
-Connection Settings
-Open database.php and verify your MySQL port:
-
-php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "student_management";
-$port = 3306; // Update to 3307 if using alternate port
-
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
-Launch Application
-text
-http://localhost/student_management/view_students.php
-Database Schema
-Table	Description
-students	Student personal identifiers and enrollment data
-courses	University course codes and titles
-student_records	Junction table linking students to courses with exam scores
-Relationships: Student Records table uses foreign keys to map students and courses with attendance tracking and grade management.
-
-Author
-Feiswal Dindi Onyango
-
-text
-
-The screenshots are in the **"📸 Screenshots"** section with each image on its own line. You'll need to:
-1. Create an `assets` folder in your project
-2. Add your screenshot images there with the exact filenames: `dashboard.png`, `add-student.png`, `courses.png`, `records.png`
